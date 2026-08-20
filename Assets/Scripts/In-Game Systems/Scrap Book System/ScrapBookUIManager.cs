@@ -1,0 +1,221 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ScrapBookUIManager : MonoBehaviour
+{
+    [Header("Category Buttons")]
+    [SerializeField] private Button photoCategoryBtn;
+    [SerializeField] private Button decoCategoryBtn;
+
+    [Header("Element Scroll Content， which is also the topbar in the scrap book UI")]
+    [SerializeField] private Transform elementContent;
+
+    [Header("Photo Element Size")]
+    [SerializeField] private Vector2 photoElementSize = new Vector2(80, 80);
+
+    [Header("ScrapBook Canvas")]
+    [SerializeField] private ScrapBookCanvas scrapBookCanvas;
+
+    [Header("Decoration Presets")]
+    [SerializeField] private ScrapBookDecoPreset[] decoPresets;
+
+    [Header("Thumbnail Settings")]
+    [SerializeField] private int thumbMaxSize = 128;
+
+    [Header("Echo Indicator")]
+    [SerializeField] private Color echoGlowColor = new Color(1f, 0.85f, 0.3f, 1f); // warm glow on echo photos
+    [SerializeField] private float echoGlowThickness = 3f;
+
+    private enum Category { Photo, Decoration }
+    private Category currentCategory = Category.Photo;
+
+    private readonly List<GameObject> spawnedElements = new();
+    private readonly Dictionary<string, Texture2D> thumbCache = new();
+
+    private bool canvasRestored = false;
+
+    private void OnEnable()
+    {
+        if (photoCategoryBtn != null) photoCategoryBtn.onClick.AddListener(() => SwitchCategory(Category.Photo));
+        if (decoCategoryBtn != null) decoCategoryBtn.onClick.AddListener(() => SwitchCategory(Category.Decoration));
+
+        if (ScrapBookDataManager.Instance != null)
+        {
+            ScrapBookDataManager.Instance.OnPhotosChanged += RefreshCurrentCategory;
+            ScrapBookDataManager.Instance.OnDecorationsChanged += RefreshCurrentCategory;
+        }
+
+        RefreshCurrentCategory();
+
+        // Restore saved canvas layout once per session (elements persist while the panel is just deactivated).
+        if (!canvasRestored)
+        {
+            RestoreCanvas();
+            canvasRestored = true;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (photoCategoryBtn != null) photoCategoryBtn.onClick.RemoveAllListeners();
+        if (decoCategoryBtn != null) decoCategoryBtn.onClick.RemoveAllListeners();
+
+        if (ScrapBookDataManager.Instance != null)
+        {
+            ScrapBookDataManager.Instance.OnPhotosChanged -= RefreshCurrentCategory;
+            ScrapBookDataManager.Instance.OnDecorationsChanged -= RefreshCurrentCategory;
+
+            if (scrapBookCanvas != null)
+                ScrapBookDataManager.Instance.SaveCanvas(scrapBookCanvas.GetAllElementData());
+        }
+    }
+
+    private void RestoreCanvas()
+    {
+        if (scrapBookCanvas == null || ScrapBookDataManager.Instance == null) return;
+
+        foreach (var data in ScrapBookDataManager.Instance.LoadCanvas())
+        {
+            ScrapBookDecoPreset preset = data.type == "photo" ? null : FindPreset(data.id);
+            scrapBookCanvas.RebuildElement(data, preset);
+        }
+    }
+
+    private ScrapBookDecoPreset FindPreset(string presetName)
+    {
+        if (decoPresets == null) return null;
+        foreach (var preset in decoPresets)
+            if (preset != null && preset.presetName == presetName) return preset;
+        return null;
+    }
+
+    private void SwitchCategory(Category cat)
+    {
+        if (currentCategory == cat) return;
+        currentCategory = cat;
+        RefreshCurrentCategory();
+    }
+
+    private void RefreshCurrentCategory()
+    {
+        ClearSpawned();
+
+        if (currentCategory == Category.Photo)
+            PopulatePhotos();
+        else
+            PopulateDecorations();
+    }
+
+    private void PopulatePhotos()
+    {
+        if (ScrapBookDataManager.Instance == null) return;
+
+        var photos = ScrapBookDataManager.Instance.Photos;
+        for (int i = 0; i < photos.Count; i++)
+        {
+            string fileName = photos[i];
+            Texture2D thumb = GetOrCreateThumbnail(fileName);
+            if (thumb == null) continue;
+
+            GameObject go = new GameObject(fileName);
+            go.transform.SetParent(elementContent, false);
+
+            var rt = go.AddComponent<RectTransform>();
+            rt.sizeDelta = photoElementSize;
+
+            var le = go.AddComponent<LayoutElement>();
+            le.preferredWidth = photoElementSize.x;
+            le.preferredHeight = photoElementSize.y;
+
+            var rawImage = go.AddComponent<RawImage>();
+            rawImage.texture = thumb;
+
+            // Glow outline if this photo carries Echo content.
+            if (EchoPhotoStorage.Load(fileName).Count > 0)
+            {
+                var outline = go.AddComponent<Outline>();
+                outline.effectColor = echoGlowColor;
+                outline.effectDistance = new Vector2(echoGlowThickness, echoGlowThickness);
+            }
+
+            var draggable = go.AddComponent<ScrapBookDraggable>();
+            draggable.SetupPhoto(fileName, thumb, scrapBookCanvas);
+
+            spawnedElements.Add(go);
+        }
+    }
+
+    private void PopulateDecorations()
+    {
+        if (decoPresets == null) return;
+
+        foreach (var preset in decoPresets)
+        {
+            Debug.Log($"[ScrapBook] preset: {preset?.presetName}, icon: {preset?.icon}, type: {preset?.decoType}");
+            if (preset == null || preset.icon == null) continue;
+
+            GameObject go = new GameObject(preset.presetName);
+            go.transform.SetParent(elementContent, false);
+
+            var rt = go.AddComponent<RectTransform>();
+            rt.sizeDelta = new Vector2(80, 80);
+
+            var le = go.AddComponent<LayoutElement>();
+            le.preferredWidth = 80;
+            le.preferredHeight = 80;
+
+            var image = go.AddComponent<Image>();
+            image.sprite = preset.icon;
+            image.preserveAspect = true;
+
+            var draggable = go.AddComponent<ScrapBookDraggable>();
+            draggable.Setup(preset, scrapBookCanvas);
+
+            spawnedElements.Add(go);
+        }
+    }
+
+    private void ClearSpawned()
+    {
+        foreach (var go in spawnedElements) Destroy(go);
+        spawnedElements.Clear();
+    }
+
+    private Texture2D GetOrCreateThumbnail(string fileName)
+    {
+        if (thumbCache.TryGetValue(fileName, out var cached))
+            return cached;
+
+        Texture2D tex = CameraPhotoStorage.LoadTexture(fileName);
+        if (tex == null) return null;
+
+        Texture2D thumb = MakeThumbnail(tex, thumbMaxSize);
+        Object.Destroy(tex);
+        thumbCache[fileName] = thumb;
+        return thumb;
+    }
+
+    private static Texture2D MakeThumbnail(Texture2D src, int maxSize)
+    {
+        int w = src.width, h = src.height;
+        float scale = Mathf.Min(maxSize / (float)w, maxSize / (float)h, 1f);
+        int tw = Mathf.Max(1, Mathf.RoundToInt(w * scale));
+        int th = Mathf.Max(1, Mathf.RoundToInt(h * scale));
+
+        RenderTexture rt = RenderTexture.GetTemporary(tw, th, 0);
+        Graphics.Blit(src, rt);
+
+        RenderTexture prev = RenderTexture.active;
+        RenderTexture.active = rt;
+
+        Texture2D dst = new Texture2D(tw, th, TextureFormat.RGB24, false);
+        dst.ReadPixels(new Rect(0, 0, tw, th), 0, 0, false);
+        dst.Apply(false);
+
+        RenderTexture.active = prev;
+        RenderTexture.ReleaseTemporary(rt);
+
+        return dst;
+    }
+}

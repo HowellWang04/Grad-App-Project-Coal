@@ -1,0 +1,215 @@
+# Normalize text consistently across operating systems
+* text=auto
+
+# Project text files
+.gitattributes text eol=lf
+.gitignore text eol=lf
+*.cs text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.xml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+# Unity YAML files
+*.anim text eol=lf merge=unityyamlmerge
+*.asset text eol=lf merge=unityyamlmerge
+*.controller text eol=lf merge=unityyamlmerge
+*.mat text eol=lf merge=unityyamlmerge
+*.meta text eol=lf merge=unityyamlmerge
+*.prefab text eol=lf merge=unityyamlmerge
+*.unity text eol=lf merge=unityyamlmerge
+# Binary assets
+*.aif -text
+*.aiff -text
+*.blend -text
+*.exr -text
+*.fbx -text
+*.flac -text
+*.gif -text
+*.glb -text
+*.hdr -text
+*.jpeg -text
+*.jpg -text
+*.mp3 -text
+*.mp4 -text
+*.ogg -text
+*.otf -text
+*.pdf -text
+*.png -text
+*.psd -text
+*.tga -text
+*.tif -text
+*.tiff -text
+*.ttf -text
+*.wav -text
+*.zip -text
+/Assets/LeartesStudios/IndustrialHarbour/HDRP/Art/Textures/T_Crack01_BC.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Prefabs/Skybox/Textures/Afternoon_Skybox.hdr filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Data/Terrain_0_0_8723fb12-db1c-4ba2-97c5-90e784c8adbf.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Data/Terrain_0_1_e85387be-618a-4f11-a28f-1cbc224e6e94.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Data/Terrain_0_2_5f735b10-59bc-418b-b24d-4385eb3a186d.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Data/Terrain_1_0_548791b1-5119-4501-a6f8-e5b8e45c25d8.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Data/Terrain_1_1_4bf22c8f-eb55-436d-84e3-dedfa85665b1.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Data/Terrain_1_2_1694bb0f-cffe-402c-b6f9-cf47692fbb78.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Data/Terrain_1_3_c8bbd3cb-768c-4918-85c9-b01968beea93.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Data/Terrain_2_0_1170b034-efff-4ff0-8513-60d934e963db.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Data/Terrain_2_1_82fc4922-5564-4a18-858e-787f6d901556.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Data/Terrain_2_2_b6e03cf0-de91-4cae-b6af-0128d856ae43.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Data/Terrain_2_3_f3ed9c1f-cb52-413a-a7d7-8e03961f4d5b.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Data/Terrain_3_0_ae064d43-ab51-4240-a34a-6f1f5da8134d.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Data/Terrain_3_1_f87b3edd-12d5-4d51-aea4-88280910a3d8.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Data/Terrain_3_2_77e49ac9-7f8e-47c2-ae00-57296acecb1c.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Textures/Cliff_Mossy_E/Cliff_Mossy_E_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Textures/Cliff_Mossy_E/Cliff_Mossy_E_MaskMap.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/TerrainDemoScene_URP/Terrain/Textures/Cliff_Mossy_E/Cliff_Mossy_E_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/_Resources/索道塔架/house[[:space:]]1.fbx filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Cableway/house[[:space:]]1.fbx filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Gate[[:space:]]Area/FactoryGate.glb filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Skyboxes/belfast_sunset_puresky_4k.exr filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Skyboxes/drackenstein_quarry_puresky_4k[[:space:]](1).exr filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Skyboxes/industrial_sunset_puresky_4k.exr filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Skyboxes/minedump_flats_4k[[:space:]](1).exr filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Skyboxes/minedump_flats_4k.exr filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_Crack01_BC.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Cableway/fandou.fbx filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Cableway/suodao-S.fbx filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Cableway/tajia01.fbx filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Cableway/tajia02.fbx filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Cableway/tajia03.fbx filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Cableway/texture/texture_pbr_20250901.001[[:space:]]1.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Cableway/texture/texture_pbr_20250901.001.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Cableway/texture/texture_pbr_20250901.002[[:space:]]1.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Cableway/texture/texture_pbr_20250901.002.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Cableway/texture/texture_pbr_20250901.003.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Cableway/texture/texture_pbr_20250901.004.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Cableway/texture/texture_pbr_20250901.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Gate[[:space:]]Area/notebook/source/Notebook.fbx filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Gate[[:space:]]Area/notebook/textures/Notepad_Leather_Albedo.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Gate[[:space:]]Area/notebook/textures/Notepad_Leather_Normal.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Gate[[:space:]]Area/notebook/textures/Notepad_Notepad_sleeve_Albedo.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Gate[[:space:]]Area/notebook/textures/Notepad_Notepad_sleeve_Normal.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Gate[[:space:]]Area/notebook/textures/Notepad_Notepad_sleeve_Roughness.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Gate[[:space:]]Area/notebook/textures/Notepad_Paper_Albedo.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Gate[[:space:]]Area/notebook/textures/Notepad_Paper_Normal.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Gate[[:space:]]Area/notebook/textures/Notepad_Ties_Albedo.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Gate[[:space:]]Area/notebook/textures/Notepad_Ties_Normal.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Gate[[:space:]]Area/notebook/textures/Notepad_Ties_Roughness.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground10/ground10_Diffuse.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground10/ground10_Normal.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground11/ground11_Diffuse.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground11/ground11_Normal.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground12/ground12_Diffuse.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground12/ground12_Normal.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground13/ground13_Diffuse.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground13/ground13_Normal.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground14/ground14_Diffuse.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground14/ground14_Normal.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground5/ground5_Normal.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground6/ground6_Normal.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground7/ground7_Normal.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground8/ground8_Diffuse.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground8/ground8_Normal.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground9/ground9_Diffuse.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/ADG_Textures/ground_vol1/ground9/ground9_Normal.tga filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/MyTextures/Ground104_4K-JPG_Color.jpg filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/MyTextures/Ground104_4K-JPG_NormalGL.jpg filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/MyTextures/aerial_ground_rock_nor_gl_4k.exr filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/MyTextures/gravelly_sand_diff_4k.jpg filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/MyTextures/gravelly_sand_disp_4k.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/MyTextures/gravelly_sand_nor_gl_4k.exr filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/MyTextures/rocky_trail_diff_4k.jpg filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/MyTextures/rocky_trail_disp_4k.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/MyTextures/rocky_trail_nor_gl_4k.exr filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Terrain/MyTextures/rocky_trail_rough_4k.exr filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/Environment/Texture/texture_pbr_20250901.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/HDR/kloppenheim_06_puresky_4k.HDR filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Meshes/SM_SiloLittle.fbx filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_BlueGarageDoor_B.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_BlueGarageDoor_N.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_BlueGarageDoor_ORM.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_ConcreteBlock_N.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_Crack01_N.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_Crack02_BC.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_Crack02_N.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_CrackedConcrete_N.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_DirtSpot_02_B.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_DirtSpot_B.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_Fence_Tube_MM.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_Ground_1_N.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_Manhole_N.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_MetalTile_B.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_MetallTile3_N.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_OldPaintSteel_N.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_Rust_N.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_Sign_B.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_Sign_ORM.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_TileDirt.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_TileStoneWall_B.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_TileStoneWall_N.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_TileStoneWall_Pale_B.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_Tile_Concrete_B.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_Tile_Concrete_N.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_Tile_Concrete_ORM.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Art/Textures/T_Water_01.png filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/HDRP/Scene/HDRP_Industrial_Harbour.unity filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Industrial_Harbour/Scene/URP_Industrial_Harbour.unity filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Military_VOL4_Furniture/Textures/TX_Desk_01a_ALB.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Military_VOL4_Furniture/Textures/TX_Desk_01a_NRM.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Military_VOL4_Furniture/Textures/TX_Desk_01a_RMA.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Military_VOL4_Furniture/Textures/T_Med_Bed_01a_ALB.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Military_VOL4_Furniture/Textures/T_Med_Bed_01a_NRM.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/Military_VOL4_Furniture/Textures/T_Med_Bed_01a_RMA.PNG filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/README.pdf filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Black_Sand_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Black_Sand_MaskMap.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Black_Sand_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Grass_A_MaskMap.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Grass_A_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Grass_Dry_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Grass_Dry_MaskMap.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Grass_Dry_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Grass_Moss_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Grass_Moss_MaskMap.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Grass_Moss_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Grass_Soil_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Grass_Soil_MaskMap.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Grass_Soil_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Heather_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Heather_MaskMap.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Heather_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Muddy_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Muddy_MaskMap.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Muddy_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Pebbles_A_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Pebbles_A_MaskMap.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Pebbles_A_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Pebbles_B_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Pebbles_C_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Pebbles_C_MaskMap.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Pebbles_C_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Rock_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Rock_MaskMap.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Rock_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Sand_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Sand_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Snow_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Snow_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Soil_Rocks_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Soil_Rocks_MaskMap.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Soil_Rocks_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Tidal_Pools_BaseColor.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/TerrainSampleAssets/Textures/Terrain/Tidal_Pools_Normal.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Art[[:space:]]Resources/ThirdPartyPacks/beton-stairfreelow/source/betonStair_01.zip filter=lfs diff=lfs merge=lfs -text
+/Assets/Plugins/MapMagic/Demo/Compatibility/CTS/Arrays/CTS_Profile_Albedos.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/Plugins/MapMagic/Demo/Compatibility/CTS/Arrays/CTS_Profile_Normals.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/Plugins/MapMagic/Demo/Compatibility/MegaSplat/Texture[[:space:]]Array[[:space:]]Config_diff_tarray.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/Plugins/MapMagic/Demo/Compatibility/MegaSplat/Texture[[:space:]]Array[[:space:]]Config_normSAO_tarray.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/Plugins/MapMagic/Demo/Compatibility/MicroSplat/TextureArrayDef_diff_tarray.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/Plugins/MapMagic/Demo/Compatibility/MicroSplat/TextureArrayDef_normSAO_tarray.asset filter=lfs diff=lfs merge=lfs -text
+/Assets/Plugins/MapMagic/Demo/LandTextures/GrassGreen_nrm.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Plugins/MapMagic/Demo/LandTextures/SandCracks_nrm.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Plugins/MapMagic/Demo/Trees/Birch/Textures/Birch_n.tif filter=lfs diff=lfs merge=lfs -text
+/Assets/Plugins/MapMagic/Manual.pdf filter=lfs diff=lfs merge=lfs -text
+/Assets/Scenes/Camera[[:space:]]Funciton[[:space:]]Scene.unity filter=lfs diff=lfs merge=lfs -text
+/Assets/Scenes/Main[[:space:]]Game[[:space:]]Scene.unity filter=lfs diff=lfs merge=lfs -text

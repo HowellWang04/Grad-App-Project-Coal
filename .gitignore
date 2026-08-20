@@ -1,0 +1,47 @@
+# Unity generated
+/Library/
+/Temp/
+/Logs/
+/obj/
+/Builds/
+/UserSettings/
+
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Unity3D generated file on crash reports
+sysinfo.txt
+
+# Builds
+*.apk
+*.aab
+*.unitypackage
+*.unitypackage.meta
+*.app
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+
+# Local AI assistant state
+.claude/
+.codex/
+.agents/
+
+# AI collaboration documents must stay versioned
+!AGENTS.md
+!SystemDependencies.md
+!Assets/For AI Agent.meta
+!Assets/For AI Agent/
+!Assets/For AI Agent/**/*.md
+
+# OS generated
+.DS_Store
+Thumbs.db
